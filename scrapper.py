@@ -78,7 +78,7 @@ class Scrapper:
             try:
                 for course in courses:
                     # Collecting only 50 cource details
-                    if i>70:
+                    if i>20:
                         break
                     i+=1
                     course_details = self.get_course_details(course.get('slug'))
