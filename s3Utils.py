@@ -12,7 +12,7 @@ class S3Utils:
             aws_access_key_id=self.access_key,
             aws_secret_access_key=self.secret
         )
-    def upload_file(self, file_path):
+    def upload_file(self,file_path):
         try:
             file_name=file_path.split("/")[-1]
             self.s3_client.upload_file(
