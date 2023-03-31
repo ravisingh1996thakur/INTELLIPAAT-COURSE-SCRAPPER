@@ -4,11 +4,11 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s', datefmt='%d/%m/%Y %I:%M:%S %p')
 
 class MongoOperation:
-    def __init__(self, username="YOUR_USERNAME", password="YOUR_PASSWORD"):
+    def __init__(self, username="santro01", password="santro01"):
         try:
-            self. username = username
+            self.username = username
             self.password = password
-            self.url = f"mongodb+srv://{username}:{password}@clusterofsurajit.99hrrkq.mongodb.net/?retryWrites=true&w=majority"
+            self.url = f"mongodb+srv://{username}:{password}@cluster0.vxomzw6.mongodb.net/?retryWrites=true&w=majority"
         except Exception as e:
             logging.error(str(e))
     
