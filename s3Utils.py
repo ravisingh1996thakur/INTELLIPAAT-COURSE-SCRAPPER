@@ -4,9 +4,9 @@ from botocore.exceptions import ClientError
 
 class S3Utils:
     def __init__(self):
-        self.access_key = 'AKIATR3L5NH5BDT6UJNC'
-        self.secret = 'S3_SECRET'
-        self.bucket_name = 'ineuron-courses-bucket'
+        self.access_key = 'AKIATR3L5NH5KTIH7B57'
+        self.secret = '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'
+        self.bucket_name = 'ineuron-courses-buckets'
         self.s3_client = boto3.client(
             's3',
             aws_access_key_id=self.access_key,
