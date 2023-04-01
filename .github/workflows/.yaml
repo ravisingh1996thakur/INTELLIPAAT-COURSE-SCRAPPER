@@ -1,32 +1,17 @@
-name: Deploy to Elastic Beanstalk
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AKIATR3L5NH5KTIH7B57}}
-        aws-secret-access-key: ${{ secrets.rgDDUQ2l5Abws/NMJiX2pMi/phjmSg1guMsQzFYb}}
-        aws-region: us-east-1
-
-    - name: Install EB CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get install python3-pip -y
-        sudo pip3 install awsebcli
-
-    - name: Deploy to Elastic Beanstalk
-      run: |
-        eb init -r us-east-1 -p python-3.7 course_scrapper --region us-east-1
-        eb deploy course_scrapper-env-2 --staged
+branch-defaults:
+  main:
+    environment: null
+global:
+  application_name: course_scrapper
+  branch: main
+  default_ec2_keyname: null
+  default_platform: Python 3.7
+  default_region: ap-south-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: origin
+  sc: git
+  workspace_type: Application
